@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Calender</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="evo-calendar.min.css">
+    <link rel="stylesheet" href="evo-calendar.midnight-blue.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    
+</head>
+<body>
+    <header>
+        <nav class="navBar">
+            <a href="#" class="nav-branding">FYE Guide</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="calender.html" class="nav-link">Calender</a>
+                </li>
+                <li class="nav-item">
+                    <a href="comments.html" class="nav-link">Comments</a>
+                </li>
+                
+            </ul>
+
+        </nav>
+    </header>
+    
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="newlogo.png" alt="logo">
+                </span>
+            </div>
+
+            <i class='bx bx-chevron-right toggle' ></i>
+
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+          
+                <ul class="menu-links">
+                    <li class="side-nav-link">
+                        <a href="index.html">
+                            <i class='bx bxs-home-heart icon'></i>
+                            <span class="text nav-text">Home</span>
+                            
+                        </a>
+                    </li>
+
+                    <li class="side-nav-link">
+                        <a href="FYE_e-Book.html">
+                            <i class='bx bxs-file-pdf icon'></i>
+                            <span class="text nav-text">FYE e-Book</span>
+                            
+                        </a>
+                    </li>
+                    <li class="side-nav-link">
+                        <a href="Campus Navigator.html">
+                            <i class='bx bxs-navigation icon'></i>
+                            <span class="text nav-text">Campus Navigator</span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-link">
+                        <a href="#">
+                            <i class='bx bxs-smile icon'></i>
+                            <span class="text nav-text">Mentorship</span>
+                        </a>
+                    </li>
+                    <li class="side-nav-link">
+                        <a href="#">
+                            <i class='bx bxs-book-heart icon'></i>
+                            <span class="text nav-text">Tutorship</span>
+                        </a>
+                    </li>
+                    <li class="side-nav-link">
+                        <a href="#">
+                            <i class='bx bxs-log-out icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        <div class="bottom content">
+            <li class="mode">
+                <div class="moon-sun">
+                    <i class='bx bxs-moon icon moon'></i>
+                    <i class='bx bxs-sun icon sun'></i>
+                </div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </div>
+    </div>
+    </nav>
+    <!-- <div class="container3">
+        <div class="left">
+            <div class="calender">
+                <div class="month">
+                    <i class='bx bx-chevron-left'></i>
+                    <div class="date">November 2023</div>
+                    <i class='bx bx-chevron-right'></i>
+                </div>
+                <div class="weekdays">
+                    <div>Sun</div>
+                    <div>Mon</div>
+                    <div>Tue</div>
+                    <div>Wed</div>
+                    <div>Thu</div>
+                    <div>Fri</div>
+                    <div>Sat</div>
+                </div>
+                <div class="days">
+                    <div class="day">1</div>
+                    <div class="day">2</div>
+                    <div class="day">3</div>
+                    <div class="day">4</div>
+                    <div class="day">5</div>
+                    <div class="day">6</div>
+                    <div class="day">7</div>
+                    <div>8</div>
+                    <div>9</div>
+                    <div>10</div>
+                    <div>11</div>
+                    <div>12</div>
+                    <div>13</div>
+                    <div>14</div>
+                    <div>15</div>
+                    <div>16</div>
+                    <div>17</div>
+                    <div>18</div>
+                    <div>19</div>
+                    <div>20</div>
+                    <div>21</div>
+                    <div>22</div>
+                    <div>23</div>
+                    <div>24</div>
+                    <div>25</div>
+                    <div>26</div>
+                    <div>27</div>
+                    <div>28</div>
+
+
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="myCalender">
+        <div id="calendar"></div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <script src="evo-calendar.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('#calendar').evoCalendar({
+        calendarEvents: [
+        {
+        id: 'Event1', // Event's ID (required)
+        name: "Academic Year Begins", // Event name (required)
+        date: "January/3/2023", // Event date (required)
+        description:"University Reopens",
+        type: "event",// Event type (required)
+        color: "#00FF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event1', // Event's ID (required)
+        name: "Registration Opens", // Event name (required)
+        date: "January/3/2023", // Event date (required)
+        description:"Advanced and Postgraduate Diplomas,Honours,Master and Doctoral registration commence",
+        type: "event",// Event type (required)
+        color: "#00FF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event1', // Event's ID (required)
+        name: "Registration Opens", // Event name (required)
+        date: "January/3/2023", // Event date (required)
+        description:"\n WIL Registrations commence",
+        type: "event",// Event type (required)
+        color: "#00FF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event2', // Event's ID (required)
+        name: "Registration Closes", // Event name (required)
+        date: "January/6/2023", // Event date (required)
+        description:"WIL Registrations Ends",
+        type: "event",// Event type (required)
+        color: "#FF0000", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event3', // Event's ID (required)
+        name: "Examinations", // Event name (required)
+        date: "January/16/2023", // Event date (required)
+        description:"2022 2nd Semester Re-Exams,Special Exams commence",
+        type: "event",// Event type (required)
+        color: "#00FF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event4', // Event's ID (required)
+        name: "Examinations End", // Event name (required)
+        date: "January/20/2023", // Event date (required)
+        description:"2022 2nd Semester Re-Exams,Special Exams Ends",
+        type: "event",// Event type (required)
+        color: "#FF0000", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event5', // Event's ID (required)
+        name: "Submissions", // Event name (required)
+        date: "January/27/2023", // Event date (required)
+        description:" Last day for the submission of Masters Dissertations and Doctoral Theses • Final admission and selection of new applicants",
+        type: "event",// Event type (required)
+        color: "#FF0000", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event5', // Event's ID (required)
+        name: "Admissions", // Event name (required)
+        date: "January/27/2023", // Event date (required)
+        description:"• Final admission and selection of new applicants",
+        type: "event",// Event type (required)
+        color: "#FFFF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event6', // Event's ID (required)
+        name: "Registration Opens", // Event name (required)
+        date: "February/03/2023", // Event date (required)
+        description:"• Registration of the SRC/CRC members• ",
+        type: "event",// Event type (required)
+        color: "#00FF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event6', // Event's ID (required)
+        name: "Registration Closes", // Event name (required)
+        date: "February/03/2023", // Event date (required)
+        description:"• Advanced and Postgraduate Diplomas, and Honours students’ registration end",
+        type: "event",// Event type (required)
+        color: "#FF0000", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event6', // Event's ID (required)
+        name: "Marks Release", // Event name (required)
+        date: "February/03/2023", // Event date (required)
+        description:"• Publishing of Re-Exams/Special Exams",
+        type: "event",// Event type (required)
+        color: "#0000FF", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event7', // Event's ID (required)
+        name: "Residences Open", // Event name (required)
+        date: "February/04/2023", // Event date (required)
+        description:" Residents open for new students",
+        type: "event",// Event type (required)
+        color: "#FFFF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event8', // Event's ID (required)
+        name: "Registrations", // Event name (required)
+        date: "February/06/2023", // Event date (required)
+        description:"• Registration of new students commence",
+        type: "event",// Event type (required)
+        color: "#00FF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event9', // Event's ID (required)
+        name: "Registrations", // Event name (required)
+        date: "February/10/2023", // Event date (required)
+        description:"• Registration of new students end ",
+        type: "event",// Event type (required)
+        color: "#FF0000", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event9', // Event's ID (required)
+        name: "Marks Release", // Event name (required)
+        date: "February/10/2023", // Event date (required)
+        description:"• Publication of results for remarking of examination scripts",
+        type: "event",// Event type (required)
+        color: "#0000FF", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event10', // Event's ID (required)
+        name: "Residences Open", // Event name (required)
+        date: "February/11/2023", // Event date (required)
+        description:" Residents open for returning students",
+        type: "event",// Event type (required)
+        color: "#FFFF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event11', // Event's ID (required)
+        name: "Registration", // Event name (required)
+        date: "February/13/2023", // Event date (required)
+        description:"Registration of returning students commence",
+        type: "event",// Event type (required)
+        color: "#00FF00", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event11', // Event's ID (required)
+        name: "Orientation", // Event name (required)
+        date: "February/13/2023", // Event date (required)
+        description:" Orientation of new students commence",
+        type: "event",// Event type (required)
+        color: "#0000FF", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event12', // Event's ID (required)
+        name: "Registrations", // Event name (required)
+        date: "February/17/2023", // Event date (required)
+        description:"Registration returning students end ",
+        type: "event",// Event type (required)
+        color: "#FF0000", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event12', // Event's ID (required)
+        name: "Classes", // Event name (required)
+        date: "February/20/2023", // Event date (required)
+        description:"Lectures commence (1st Term)",
+        type: "event",// Event type (required)
+        color: "#FF0000", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event12', // Event's ID (required)
+        name: "Closing Date", // Event name (required)
+        date: "February/28/2023", // Event date (required)
+        description:" Last day for the changing of curriculum, programmes, cancellation of modules, late registration, applications for DP retention and module credits exemptions.",
+        type: "event",// Event type (required)
+        color: "#FF0000", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event13', // Event's ID (required)
+        name: " University Holiday", // Event name (required)
+        date: "March/20/2023", // Event date (required)
+        description:"Long weekend",
+        type: "holiday",// Event type (required)
+        color: "#0000FF", 
+        everyYear: true // Same event every year (optional)
+      },
+      {
+        id: 'Event14', // Event's ID (required)
+        name: "Public Holiday", // Event name (required)
+        date: "March/21/2023", // Event date (required)
+        description:"Human Right's Day",
+        type: "event",// Event type (required)
+        color: "#0000FF", 
+        everyYear: true // Same event every year (optional)
+      }
+    ]       
+    })
+})
+    </script>
+</body>
+</html>

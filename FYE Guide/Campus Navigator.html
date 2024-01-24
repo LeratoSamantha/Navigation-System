@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Map</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <header>
+        <nav class="navBar">
+            <a href="#" class="nav-branding">Campus Navigator</a>
+            <ul class="nav-menu"></ul>
+
+        </nav>
+    </header>
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <img src="newlogo.png" alt="logo">
+                </span>
+            </div>
+
+            <i class='bx bx-chevron-right toggle' ></i>
+
+        </header>
+        <div class="menu-bar">
+            <div class="menu">
+          
+                <ul class="menu-links">
+                    <li class="side-nav-link">
+                        <a href="index.html">
+                            <i class='bx bxs-home-heart icon'></i>
+                            <span class="text nav-text">Home</span>
+                            
+                        </a>
+                    </li>
+
+                    <li class="side-nav-link">
+                        <a href="FYE_e-Book.html">
+                            <i class='bx bxs-file-pdf icon'></i>
+                            <span class="text nav-text">FYE e-Book</span>
+                            
+                        </a>
+                    </li>
+                    <li class="side-nav-link">
+                        <a href="Campus Navigator.html">
+                            <i class='bx bxs-navigation icon'></i>
+                            <span class="text nav-text">Campus Navigator</span>
+                        </a>
+                    </li>
+
+                    <li class="side-nav-link">
+                        <a href="Mentorship.html">
+                            <i class='bx bxs-smile icon'></i>
+                            <span class="text nav-text">Mentorship</span>
+                        </a>
+                    </li>
+                    <li class="side-nav-link">
+                        <a href="Tutorship.html">
+                            <i class='bx bxs-book-heart icon'></i>
+                            <span class="text nav-text">Tutorship</span>
+                        </a>
+                    </li>
+                    <li class="side-nav-link">
+                        <a href="#">
+                            <i class='bx bxs-log-out icon'></i>
+                            <span class="text nav-text">Logout</span>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        
+        <div class="bottom content">
+            <li class="mode">
+                <div class="moon-sun">
+                    <i class='bx bxs-moon icon moon'></i>
+                    <i class='bx bxs-sun icon sun'></i>
+                </div>
+                    <span class="mode-text text">Dark Mode</span>
+
+                <div class="toggle-switch">
+                    <span class="switch"></span>
+                </div>
+              
+            </li>
+        </div>
+    </div>
+    </nav>
+
+    <div id="floating-panel">
+        <form class="form-horizontal">
+            <div class="form-group" style="display: none;">
+                <label for="from" class="col-xs-2 control-label"><i class="far fa-dot-circle"></i></label>
+                <div class="col-xs-4">
+                    <input type="text" id="from" placeholder="Your location" class="form-control">
+                </div>
+           </div>
+           <div class="form-group">
+
+                <label for="to" class="col-xs-2 control-label"><i class="fas fa-map-marker-alt"></i></label>
+                <div class="col-xs-4">
+                    <input type="text" id="to" placeholder="Destination" class="form-control">
+                </div>
+
+             </div>
+
+        </form>
+      <b>Mode: </b>
+      <select id="mode">
+        <option value="default">-select mode-</option>
+        <option value="DRIVING">Driving</option>
+        <option value="WALKING">Walking</option>
+
+        
+      </select>
+    </div>
+    <div id="map"></div>
+    <script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCeU33nj_h3YMQXHzQNGKzh-AmxOYUjA5A&callback=initMap&libraries=&v=weekly"> </script>
+     <script src="script.js"></script>
+
+     <script>
+        const locationInput = document.getElementById('from');
+
+        function updateLocation(position) {
+            const { coords } = position;
+            const { latitude, longitude } = coords;
+            locationInput.value = `${latitude}, ${longitude}`;
+        }
+
+        function handleLocationError(error) {
+            console.error('Error getting user location:', error);
+        }
+
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(updateLocation, handleLocationError);
+        } else {
+            console.error('Geolocation is not supported by this browser.');
+        }
+    </script>
+</body>
+</html>
